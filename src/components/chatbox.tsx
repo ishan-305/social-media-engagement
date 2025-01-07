@@ -1,0 +1,154 @@
+"use client";
+
+import useIsMobileView from "@/hooks/useIsMobileView";
+import { MessagesSquare, SendHorizonal, X } from "lucide-react";
+import { useState } from "react";
+import { Button } from "./ui/button";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
+import { cn } from "@/lib/utils";
+
+const chatArray = [
+  {
+    role: "bot",
+    content: "Welcome to the chat bot",
+  },
+];
+
+const chatLimit = 10;
+
+const Chatbox = () => {
+  const { isMobile } = useIsMobileView();
+  const [inputValue, setInputValue] = useState("");
+  const [chat, setChat] = useState(chatArray);
+
+  const handleOnSubmit = async () => {
+    if (chat.length <= chatLimit) {
+      setChat((prev) => [...prev, { role: "user", content: inputValue }]);
+      setInputValue("");
+      const response = await fetch("/api/langflow", {
+        method: "POST",
+        body: JSON.stringify({ inputValue }),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setChat((prev) => [
+          ...prev,
+          { role: "bot", content: data.data.response },
+        ]);
+        console.log("Data", data);
+      }
+    } else {
+      setChat((prev) => [
+        ...prev,
+        { role: "bot", content: "Chat limit exceeded" },
+      ]);
+    }
+  };
+
+  if (isMobile) {
+    return (
+      <Dialog>
+        <DialogTrigger>
+          <div className="absolute bottom-4 right-4 rounded-3xl size-14 flex items-center justify-center bg-white text-black">
+            <MessagesSquare size={32} />
+          </div>
+        </DialogTrigger>
+        <DialogContent className="bg-black border-none ">
+          <DialogTitle className="hidden">Analytics Chat Bot</DialogTitle>
+          <div className="flex-[2]  flex overflow-hidden flex-col mx-auto w-full bg-slate-900 h-[620px] rounded-[20px]">
+            <div className="flex flex-col px-4 py-2 w-full bg-slate-900 border-b border-neutral-700">
+              <div className="flex gap-10  text-gray-300 items-center">
+                <h1 className="flex-1 text-center ">Analytics Chat Bot</h1>
+                <DialogClose>
+                  <X size={24} />
+                </DialogClose>
+              </div>
+            </div>
+            <div className="flex-1 flex flex-col gap-2 px-6 mt-8 w-full  leading-8  overflow-y-auto">
+              {chat.map((chat, index) => (
+                <div
+                  key={index}
+                  className={cn(
+                    "px-4 py-2 leading-loose rounded-xl ",
+                    chat.role === "bot"
+                      ? "self-start bg-neutral-700"
+                      : "self-end bg-violet-700"
+                  )}
+                >
+                  {chat.content}
+                </div>
+              ))}
+            </div>
+            <form>
+              <div className="flex overflow-hidden  gap-2 px-8 py-3  w-full bg-slate-900 border-t border-solid border-neutral-700">
+                <input
+                  className="rounded-lg flex-1 h-12 px-2 leading-loose text-gray-500 bg-slate-900 border border-neutral-700"
+                  placeholder="Write your message..."
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                />
+
+                <Button onClick={handleOnSubmit} type="submit">
+                  <SendHorizonal size={32} />
+                </Button>
+              </div>
+            </form>
+          </div>
+        </DialogContent>
+      </Dialog>
+    );
+  }
+
+  return (
+    <div className="flex-[2] my-4 flex overflow-hidden flex-col mx-auto w-full bg-neutral-100 h-[620px] rounded-[20px]">
+      <div className="flex flex-col px-4 py-2 w-full bg-white border-b border-neutral-200">
+        <div className="flex gap-10  text-gray-500 items-center">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7839996309323edec733ac9ef90d63a6540c24278f7e81f251639202b187c045?placeholderIfAbsent=true&apiKey=465f61beb0264131b80c2629d78776b3"
+            className="object-contain shrink-0 aspect-square w-[35px]"
+          />
+          <h1 className="flex-1 text-center ">Analytics Chat Bot</h1>
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/861617a334c0d905418b285edf7a421d64967067b68f9b7893c9f1a47d0ffc23?placeholderIfAbsent=true&apiKey=465f61beb0264131b80c2629d78776b3"
+            className="object-contain shrink-0 aspect-[2] w-[70px]"
+          />
+        </div>
+      </div>
+      <div className="flex-1 flex flex-col gap-2 px-6 mt-8  overflow-y-auto">
+        {chat.map((chat, index) => (
+          <div
+            key={index}
+            className={cn(
+              "p-2 rounded-xl max-w-[80%] ",
+              chat.role === "bot"
+                ? "self-start bg-neutral-700"
+                : "self-end bg-violet-700"
+            )}
+          >
+            {chat.content}
+          </div>
+        ))}
+      </div>
+      <div className="flex overflow-hidden gap-2 px-8 py-3  w-full bg-white border border-solid border-neutral-200">
+        <input
+          className="rounded-lg flex-1 h-12 px-2 leading-loose  bg-slate-900 border border-neutral-700"
+          placeholder="Write your message..."
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <Button onClick={handleOnSubmit}>
+          <SendHorizonal size={32} />
+        </Button>
+      </div>
+    </div>
+  );
+};
+export default Chatbox;
