@@ -23,7 +23,7 @@ const chatArray = [
 const chatLimit = 10;
 
 const Chatbox = () => {
-  const { isMobile } = useIsMobileView();
+  const { isMobile, windowHeight } = useIsMobileView();
   const [inputValue, setInputValue] = useState("");
   const [chat, setChat] = useState(chatArray);
   const [loading, setLoading] = useState(false);
@@ -118,7 +118,7 @@ const Chatbox = () => {
   }
 
   return (
-    <div className="fixed right-2 bottom-2 flex-[2] flex overflow-hidden flex-col mx-auto w-1/3  h-[640px] border border-neutral-700  rounded-[20px] bg-slate-950/70">
+    <div className="fixed top-24 right-2 bottom-2 flex-[2] flex overflow-hidden flex-col mx-auto w-1/3   border border-neutral-700  rounded-[20px] bg-slate-950/70">
       <div className="flex flex-col px-4 py-2 w-full  border-b border-neutral-800">
         <div className="flex gap-10  text-gray-500 items-center">
           <img

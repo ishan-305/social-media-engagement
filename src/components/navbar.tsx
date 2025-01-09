@@ -22,13 +22,16 @@ const navItems = [
 const Navbar = () => {
   const currPath = usePathname();
   return (
-    <div className="fixed flex flex-col justify-center items-center py-6 w-full  border-solid  max-md:max-w-full bg-gradient-to-b from-slate-900 to-transparent z-10 backdrop-blur-md">
+    <div className="sticky top-0 flex flex-col justify-center items-center py-6 w-full  border-solid  max-md:max-w-full bg-gradient-to-b from-slate-900 to-transparent z-10 backdrop-blur-md">
       <div className="flex flex-col sm:flex-row flex-wrap gap-10 justify-between items-center max-w-full w-[1224px]">
         <div className="flex overflow-hidden relative gap-px items-start self-stretch px-1 py-0.5 my-auto ">
           <div className="flex z-0 gap-2.5 items-center">
-            <h1 className="text-2xl text-center font-bold tracking-wide bg-clip-text bg-gradient-to-b from-[rgba(255,255,255,1)] to-[rgba(0,0,0,0.7)] ">
+            <Link
+              href="/"
+              className="text-2xl text-center font-bold tracking-wide bg-clip-text bg-gradient-to-b from-[rgba(255,255,255,1)] to-[rgba(0,0,0,0.7)] "
+            >
               SocialLens
-            </h1>
+            </Link>
           </div>
         </div>
         <div className="flex gap-4 justify-center max-sm:w-full items-center self-stretch my-auto text-base whitespace-nowrap min-w-[240px] text-slate-400">
@@ -49,12 +52,12 @@ const Navbar = () => {
           href="https://github.com/vishnud05/social-media-engagement"
           target="_blank"
         >
-          <Button
-            size={"lg"}
-            className="gap-2.5 hidden sm:flex items-center self-stretch px-6 py-4 my-auto text-base font-medium leading-none text-white bg-violet-600 rounded-[36px] max-md:px-5"
+          <Link
+            href={"https://github.com/vishnud05/social-media-engagement"}
+            className="gap-2.5 hidden sm:flex items-center self-stretch px-6 py-3 my-auto text-base font-medium leading-none text-white bg-violet-600 hover:bg-violet-700 rounded-[36px] max-md:px-5"
           >
             <GithubIcon /> Github
-          </Button>
+          </Link>
         </a>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { GithubIcon, YoutubeIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -25,17 +26,25 @@ export default function Home() {
                 </div>
                 <div className="flex gap-8 items-start mt-8 text-lg font-medium leading-none">
                   <a href="https://www.youtube.com" target="_blank">
-                    <div className="flex items-center gap-2.5 self-stretch px-6 py-4 text-white bg-violet-600 rounded-[36px] max-md:px-5">
+                    <Link
+                      href={"https://www.youtube.com"}
+                      className="flex items-center gap-2.5 self-stretch px-6 py-4 text-white bg-violet-600 hover:bg-violet-700 rounded-[36px] max-md:px-5"
+                    >
                       <YoutubeIcon className="w-7 h-7" /> View Demo
-                    </div>
+                    </Link>
                   </a>
                   <a
                     href="https://github.com/vishnud05/social-media-engagement"
                     target="_blank"
                   >
-                    <div className="flex items-center gap-2.5 self-stretch px-6 py-4 border border-solid border-slate-800 rounded-[46px] text-neutral-100 max-md:px-5">
+                    <Link
+                      href={
+                        "https://github.com/vishnud05/social-media-engagement"
+                      }
+                      className="flex items-center gap-2.5 self-stretch px-6 py-4 border border-solid border-slate-800 rounded-[46px] text-neutral-100 hover:bg-slate-950/60 max-md:px-5"
+                    >
                       <GithubIcon className="w-7 h-7" /> Github
-                    </div>
+                    </Link>
                   </a>
                 </div>
               </div>
@@ -162,7 +171,7 @@ export default function Home() {
               <div className="text-6xl tracking-tighter leading-none bg-clip-text bg-[linear-gradient(180deg,#F6F6F7_0%,#7E808F_100%)] max-md:max-w-full max-md:text-4xl">
                 Essential apps that protect your
               </div>
-              <div className="flex flex-wrap gap-8 items-start mt-5 text-5xl tracking-tighter leading-none whitespace-nowrap max-md:max-w-full max-md:text-4xl">
+              <div className="flex flex-wrap gap-8 items-start justify-center mt-5 text-5xl tracking-tighter leading-none whitespace-nowrap max-md:max-w-full max-md:text-4xl">
                 <div className="flex gap-3 items-center max-md:text-4xl">
                   <img
                     loading="lazy"
@@ -206,7 +215,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-col mt-16 w-full max-w-[1224px] max-md:mt-10 max-md:max-w-full">
-              <div className="flex relative gap-10 items-start p-16 w-full rounded-xl border border-solid bg-slate-900 border-slate-800 max-md:px-5">
+              <div className="flex flex-col sm:flex-row relative gap-10 items-start p-16 w-full rounded-xl border border-solid bg-slate-900 border-slate-800 max-md:px-5">
                 <img
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/d7e06f12dd807dd5c94c30328dd7e6d657c32347728b3083af3b152d978f9790?placeholderIfAbsent=true&apiKey=465f61beb0264131b80c2629d78776b3"
@@ -297,7 +306,7 @@ export default function Home() {
                   className="object-contain absolute top-0 right-0 z-0 self-start rounded-none aspect-[1.21] h-[512px] min-w-[240px] w-[619px] max-md:max-w-full"
                 />
               </div>
-              <div className="flex  gap-10 items-stretch mt-10 max-md:max-w-full">
+              <div className="flex flex-col sm:flex-row gap-10 items-stretch mt-10 max-md:max-w-full">
                 <div className="flex  relative flex-col items-start px-14 py-12 rounded-xl border border-solid bg-slate-900 border-slate-800 min-w-[240px] w-[496px] max-md:px-5 max-md:max-w-full">
                   <img
                     loading="lazy"
