@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { Youtube } from "lucide-react";
+import { GithubIcon, Youtube } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
