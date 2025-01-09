@@ -1,7 +1,14 @@
 "use client";
 
 import { TrendingUp } from "lucide-react";
-import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  LabelList,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 import {
   Card,
@@ -18,30 +25,22 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { engagementData } from "@/lib/data";
-const chartData = engagementData;
+import { calculateLikesPercentage } from "@/lib/calculateLikes";
+const chartData = calculateLikesPercentage(engagementData);
 
 const chartConfig = {
-  Likes: {
-    label: "Likes",
+  Post_Type: {
+    label: "Post Type",
     color: "hsl(var(--chart-1))",
   },
-  Shares: {
-    label: "Shares",
+  Likes_Percentage: {
+    label: "Mobile",
     color: "hsl(var(--chart-2))",
   },
-  Comments: {
-    label: "Comments",
-    color: "hsl(var(--chart-3))",
+  label: {
+    color: "hsl(var(--background))",
   },
 } satisfies ChartConfig;
-
-const formatDate = (dateString: string) => {
-  const options: Intl.DateTimeFormatOptions = {
-    month: "short",
-    day: "numeric",
-  };
-  return new Date(dateString).toLocaleDateString("en-US", options);
-};
 
 export function AreaChartStacked() {
   return (
@@ -49,81 +48,69 @@ export function AreaChartStacked() {
       <CardHeader>
         <CardTitle>Likes Breakdown By Post Type</CardTitle>
         <CardDescription>
-          Showing total visitors for the last 6 months
+          Showing Total Percentage Likes on Different Posts
         </CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
-          <AreaChart
+          <BarChart
             accessibilityLayer
             data={chartData}
+            layout="vertical"
             margin={{
-              left: 12,
-              right: 12,
-              top: 12,
+              right: 16,
             }}
-            stackOffset="none"
           >
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="Posted_Date"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              tickFormatter={(date) => formatDate(date)}
-            />
+            <CartesianGrid horizontal={false} />
             <YAxis
-              // dataKey="date"
+              dataKey="Post_Type"
+              type="category"
               tickLine={false}
+              tickMargin={10}
               axisLine={false}
-              tickMargin={8}
-              domain={[
-                (dataMin: number) => dataMin,
-                (dataMax: number) => dataMax + 100,
-              ]}
+              hide
+            />
+            <XAxis
+              dataKey="Likes_Percentage"
+              tickFormatter={(value) => `${value}%`}
+              domain={[0, (dataMax: number) => dataMax + 10]}
+              type="number"
+              hide
             />
             <ChartTooltip
               cursor={false}
               content={<ChartTooltipContent indicator="line" />}
             />
-            <Area
-              dataKey="Comments"
-              type="linear"
-              fill="var(--color-Comments)"
-              fillOpacity={0.1}
-              stroke="var(--color-Comments)"
-              stackId="a"
-            />
-            <Area
-              dataKey="Shares"
-              type="linear"
-              fill="var(--color-Shares)"
-              fillOpacity={0.4}
-              stroke="var(--color-Shares)"
-              stackId="a"
-            />
-            <Area
-              dataKey="Likes"
-              type="linear"
-              fill="var(--color-Likes)"
-              fillOpacity={0.4}
-              stroke="var(--color-Likes)"
-              stackId="a"
-            />
-          </AreaChart>
+            <Bar
+              dataKey="Likes_Percentage"
+              layout="vertical"
+              fill="var(--color-Post_Type)"
+              radius={8}
+              barSize={40}
+            >
+              <LabelList
+                dataKey="Post_Type"
+                position="insideLeft"
+                offset={8}
+                className="fill-[--color-label]"
+                fontSize={12}
+              />
+              <LabelList
+                dataKey="Likes_Percentage"
+                position="right"
+                offset={8}
+                className="fill-foreground"
+                fontSize={12}
+              />
+            </Bar>
+          </BarChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter>
-        <div className="flex w-full items-start gap-2 text-sm">
-          <div className="grid gap-2">
-            <div className="flex items-center gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-            </div>
-            <div className="flex items-center gap-2 leading-none text-muted-foreground">
-              January - June 2024
-            </div>
-          </div>
+      <CardFooter className="flex-col items-start gap-2 text-sm">
+        <div className="flex gap-2 font-medium leading-none">
+          Trending up by 5.2% on Reels <TrendingUp className="h-4 w-4" />
         </div>
+        <div className="leading-none text-muted-foreground"></div>
       </CardFooter>
     </Card>
   );
