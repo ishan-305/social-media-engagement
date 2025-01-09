@@ -64,7 +64,7 @@ const Chatbox = () => {
         </DialogTrigger>
         <DialogContent className="bg-transparent border-none backdrop-blur-md h-screen">
           <DialogTitle className="hidden">Analytics Chat Bot</DialogTitle>
-          <div className="flex-[2] h-full flex overflow-hidden flex-col mx-auto w-full bg-slate-950 h-[620px] rounded-[20px]">
+          <div className="flex-[2] my-4 sm:my-0 flex overflow-hidden flex-col mx-auto w-full bg-slate-950 sm:h-[620px] rounded-[20px]">
             <div className="flex flex-col px-4 py-2 w-full bg-slate-900 border-b border-neutral-700">
               <div className="flex gap-10  text-gray-300 items-center">
                 <h1 className="flex-1 text-center ">Analytics Chat Bot</h1>
@@ -144,7 +144,7 @@ const Chatbox = () => {
               "p-2 rounded-xl max-w-[80%]",
               chat.role === "bot"
                 ? "self-start bg-slate-700"
-                : "self-end bg-[#e23670]"
+                : "self-end bg-violet-700"
             )}
           >
             {chat.content}
@@ -152,26 +152,28 @@ const Chatbox = () => {
         ))}
       </div>
 
-      <div className="flex overflow-hidden gap-2 px-8 py-3  w-full  border-t border-solid border-neutral-800">
-        <input
-          className="rounded-xl flex-1 h-12 px-2 leading-loose  bg-slate-950/70 border border-neutral-700"
-          placeholder="Write your message..."
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-        <Button
-          variant={"ghost"}
-          onClick={handleOnSubmit}
-          className="border rounded-xl bg-slate-800"
-          disabled={loading}
-        >
-          {loading ? (
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          ) : (
-            <SendHorizonal size={32} />
-          )}
-        </Button>
-      </div>
+      <form>
+        <div className="flex overflow-hidden gap-2 px-8 py-3  w-full  border-t border-solid border-neutral-800">
+          <input
+            className="rounded-xl flex-1 h-12 px-2 leading-loose  bg-slate-950/70 border border-neutral-700"
+            placeholder="Write your message..."
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <Button
+            variant={"ghost"}
+            onClick={handleOnSubmit}
+            className="border rounded-xl bg-slate-800"
+            disabled={loading}
+          >
+            {loading ? (
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            ) : (
+              <SendHorizonal size={32} />
+            )}
+          </Button>
+        </div>
+      </form>
     </div>
   );
 };

@@ -1,5 +1,8 @@
+"use client";
+import { cn } from "@/lib/utils";
 import { Youtube } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 
 const navItems = [
@@ -17,6 +20,7 @@ const navItems = [
   },
 ];
 const Navbar = () => {
+  const currPath = usePathname();
   return (
     <div className="fixed flex flex-col justify-center items-center py-6 w-full  border-solid  max-md:max-w-full bg-gradient-to-b from-slate-900 to-transparent z-10 backdrop-blur-md">
       <div className="flex flex-col sm:flex-row flex-wrap gap-10 justify-between items-center max-w-full w-[1224px]">
@@ -32,7 +36,10 @@ const Navbar = () => {
             <Link
               key={idx}
               href={item.href}
-              className="gap-2 self-stretch p-2 my-auto cursor-pointer"
+              className={cn(
+                "gap-2 self-stretch p-2 my-auto cursor-pointer",
+                currPath === item.href ? "text-white" : "text-slate-400"
+              )}
             >
               {item.name}
             </Link>
