@@ -1,13 +1,8 @@
 "use client";
 
 import useIsMobileView from "@/hooks/useIsMobileView";
-import {
-  Loader2,
-  Loader2Icon,
-  MessagesSquare,
-  SendHorizonal,
-  X,
-} from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Loader2, MessagesSquare, SendHorizonal, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import {
@@ -17,7 +12,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
-import { cn } from "@/lib/utils";
 
 const chatArray = [
   {
