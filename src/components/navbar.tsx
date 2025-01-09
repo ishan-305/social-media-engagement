@@ -27,7 +27,7 @@ const Navbar = () => {
         <div className="flex overflow-hidden relative gap-px items-start self-stretch px-1 py-0.5 my-auto ">
           <div className="flex z-0 gap-2.5 items-center">
             <h1 className="text-2xl text-center font-bold tracking-wide bg-clip-text bg-gradient-to-b from-[rgba(255,255,255,1)] to-[rgba(0,0,0,0.7)] ">
-              PromptMasters
+              SocialLens
             </h1>
           </div>
         </div>
@@ -45,12 +45,17 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
-        <Button
-          size={"lg"}
-          className=" gap-2.5 hidden sm:flex items-center self-stretch px-6 py-4 my-auto text-base font-medium leading-none text-white bg-violet-600 rounded-[36px] max-md:px-5"
+        <a
+          href="https://github.com/vishnud05/social-media-engagement"
+          target="_blank"
         >
-          <Youtube /> View Demo
-        </Button>
+          <Button
+            size={"lg"}
+            className="gap-2.5 hidden sm:flex items-center self-stretch px-6 py-4 my-auto text-base font-medium leading-none text-white bg-violet-600 rounded-[36px] max-md:px-5"
+          >
+            <GithubIcon /> Github
+          </Button>
+        </a>
       </div>
     </div>
   );
