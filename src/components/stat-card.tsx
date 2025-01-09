@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 interface StatCardProps {
   title: string;
   value: string;
-  icon: LucideIcon;
+  icon: React.ReactElement<LucideIcon>;
   description: string;
   change: number;
   trend?: "up" | "down";
@@ -17,7 +17,7 @@ interface StatCardProps {
 export default function StatCard({
   title,
   value,
-  icon: Icon,
+  icon,
   description,
   change,
   trend = "up",
@@ -29,7 +29,7 @@ export default function StatCard({
     <Card className="relative overflow-hidden transition-all hover:shadow-lg">
       <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
         <CardTitle className="text-sm font-medium">{title}</CardTitle>
-        <Icon className="h-4 w-4 text-muted-foreground" />
+        {icon}
       </CardHeader>
       <CardContent>
         <div className="flex items-center justify-between">

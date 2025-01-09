@@ -48,9 +48,9 @@ export function AreaChartGrad() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Area Chart - Gradient</CardTitle>
+        <CardTitle>Engagement Overview</CardTitle>
         <CardDescription>
-          Showing total visitors for the last 6 months
+          Showing Total Engagement for the Last 6 Months
         </CardDescription>
       </CardHeader>
       <CardContent>

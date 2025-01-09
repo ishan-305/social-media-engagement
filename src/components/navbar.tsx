@@ -18,7 +18,7 @@ const navItems = [
 ];
 const Navbar = () => {
   return (
-    <div className="flex flex-col justify-center items-center py-6 w-full border-b border-solid border-b-slate-900 max-md:max-w-full">
+    <div className="fixed flex flex-col justify-center items-center py-6 w-full  border-solid  max-md:max-w-full bg-gradient-to-b from-slate-900 to-transparent z-10 backdrop-blur-md">
       <div className="flex flex-col sm:flex-row flex-wrap gap-10 justify-between items-center max-w-full w-[1224px]">
         <div className="flex overflow-hidden relative gap-px items-start self-stretch px-1 py-0.5 my-auto ">
           <div className="flex z-0 gap-2.5 items-center">

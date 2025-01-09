@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable}  antialiased bg-slate-900 flex flex-col min-h-screen px-2`}
       >
         <Navbar />
-        {children}
+        <div className="mt-24">{children}</div>
       </body>
     </html>
   );

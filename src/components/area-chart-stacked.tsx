@@ -47,9 +47,9 @@ export function AreaChartStacked() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Area Chart - Stacked Expanded</CardTitle>
+        <CardTitle>Likes Breakdown By Post Type</CardTitle>
         <CardDescription>
-          Showing total visitors for the last 6months
+          Showing total visitors for the last 6 months
         </CardDescription>
       </CardHeader>
       <CardContent>

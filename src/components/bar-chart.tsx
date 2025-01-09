@@ -1,7 +1,7 @@
 "use client";
 
 import { TrendingUp } from "lucide-react";
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 import {
   Card,
@@ -23,16 +23,16 @@ import { engagementData, summarizeEngagementData } from "@/lib/data";
 const chartData = summarizeEngagementData(engagementData);
 
 const chartConfig = {
-  Total_Comments: {
-    label: "Total Comments",
+  totalComments: {
+    label: "Comments",
     color: "hsl(var(--chart-1))",
   },
-  Total_Likes: {
-    label: "Total Likes",
+  totalLikes: {
+    label: "Likes",
     color: "hsl(var(--chart-2))",
   },
-  Total_Shares: {
-    label: "Total Shares",
+  totalShares: {
+    label: "Shares",
     color: "hsl(var(--chart-3))",
   },
 } satisfies ChartConfig;
@@ -41,7 +41,7 @@ export function BarChartPost() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Bar Chart - Stacked + Legend</CardTitle>
+        <CardTitle>Post Wise Performance</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
@@ -53,27 +53,34 @@ export function BarChartPost() {
               tickLine={false}
               tickMargin={10}
               axisLine={false}
-              //   tickFormatter={(value) => value.slice(0, 3)}
+              // tickFormatter={(value) => value.slice(0, 3)}
+            />
+            <YAxis
+              tickLine={false}
+              axisLine={false}
+              tickMargin={8}
+              domain={["auto", "auto"]}
+              tickFormatter={(value) => value / 1000 + "K"}
             />
             <ChartTooltip content={<ChartTooltipContent hideLabel />} />
             <ChartLegend content={<ChartLegendContent />} />
             <Bar
               dataKey="totalShares"
               stackId="a"
-              fill="var(--color-Total_Shares)"
+              fill="var(--color-totalShares)"
               radius={[0, 0, 4, 4]}
             />
             <Bar
               dataKey="totalComments"
               stackId="a"
-              fill="var(--color-Total_Comments)"
-              radius={[0, 0, 4, 4]}
+              fill="var(--color-totalComments)"
+              radius={[0, 0, 0, 0]}
             />
             <Bar
               dataKey="totalLikes"
               stackId="a"
-              fill="var(--color-Total_Likes)"
-              radius={[4, 4, 0, 0]}
+              fill="var(--color-totalLikes)"
+              radius={[8, 8, 0, 0]}
             />
           </BarChart>
         </ChartContainer>
