@@ -18,18 +18,25 @@ export default function Home() {
                     AI Powered Social Media Analytics Platform
                   </div>
                   <div className="mt-8 text-lg leading-7 text-slate-400 w-[799px] max-md:max-w-full">
-                    Rorem ipsum dolor sit amet consectetur. Gravida convallis
-                    orci ultrices non. Ultricies tempor at ut cursus mi. Aliquam
-                    sed amet vitae orci ac penatibus consectetur.
+                    Social Lens reveals what drives engagement, from reels to
+                    carousels. Unlock trends, optimize content, and make smarter
+                    social media decisions with ease.
                   </div>
                 </div>
                 <div className="flex gap-8 items-start mt-8 text-lg font-medium leading-none">
-                  <div className="flex items-center gap-2.5 self-stretch px-6 py-4 text-white bg-violet-600 rounded-[36px] max-md:px-5">
-                    <YoutubeIcon className="w-7 h-7" /> View Demo
-                  </div>
-                  <div className="flex  items-center gap-2.5 self-stretch px-6 py-4 border border-solid border-slate-800 rounded-[46px] text-neutral-100 max-md:px-5">
-                    <GithubIcon className="w-7 h-7" /> Github
-                  </div>
+                  <a href="https://www.youtube.com" target="_blank">
+                    <div className="flex items-center gap-2.5 self-stretch px-6 py-4 text-white bg-violet-600 rounded-[36px] max-md:px-5">
+                      <YoutubeIcon className="w-7 h-7" /> View Demo
+                    </div>
+                  </a>
+                  <a
+                    href="https://github.com/vishnud05/social-media-engagement"
+                    target="_blank"
+                  >
+                    <div className="flex items-center gap-2.5 self-stretch px-6 py-4 border border-solid border-slate-800 rounded-[46px] text-neutral-100 max-md:px-5">
+                      <GithubIcon className="w-7 h-7" /> Github
+                    </div>
+                  </a>
                 </div>
               </div>
               <img
@@ -44,13 +51,9 @@ export default function Home() {
           <div className="flex flex-col justify-center items-center max-w-full w-[1224px]">
             <div className="flex flex-wrap gap-10 items-center max-md:max-w-full">
               <div className="self-stretch my-auto text-6xl font-bold tracking-tighter bg-clip-text bg-[linear-gradient(180deg,#F6F6F7_0%,#7E808F_100%)] leading-[64px] w-[712px] max-md:max-w-full max-md:text-4xl max-md:leading-[51px]">
-                Powerful features to help you manage all your leads
+                Powerful features to help you manage all your Insights
               </div>
-              <div className="self-stretch my-auto text-base leading-6 text-slate-400 w-[392px]">
-                Apsum dolor sit amet consectetur. Aliquam elementum elementum in
-                ultrices. Dui maecenas ut eros turpis ultrices metus morbi
-                aliquet vel.
-              </div>
+              <div className="self-stretch my-auto text-base leading-6 text-slate-400 w-[392px]"></div>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-4 mt-16 max-md:mt-10 max-md:max-w-full">
               <div className="flex flex-col py-8 pr-10 pl-8 rounded border border-solid bg-slate-900 border-slate-800 min-w-[240px] w-[393px] max-md:px-5">
