@@ -7,8 +7,8 @@ const DashboardLayout = ({
 }>) => {
   return (
     <div className="flex-1 flex gap-4 px-4">
-      <div className="flex-[4] py-4">{children}</div>
-      <div className="flex-[2] py-4">
+      <div className="flex-1 md:flex-[4] py-4">{children}</div>
+      <div className="md:flex-[2] py-4">
         <Chatbox />
       </div>
     </div>

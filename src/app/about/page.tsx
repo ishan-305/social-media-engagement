@@ -3,55 +3,62 @@ import React from "react";
 
 const teamMembers = [
   {
-    name: "Alice Johnson",
-    role: "Project Manager",
-    description:
-      "Alice is responsible for overseeing the project and ensuring timely delivery.",
-  },
-  {
-    name: "Bob Smith",
+    name: "Ishan Singh",
     role: "Lead Developer",
     description:
-      "Bob leads the development team and is responsible for the core architecture.",
+      "Ishan leads the development team and is responsible for the core architecture.",
+    img: "ishan.jpeg",
   },
   {
-    name: "Charlie Brown",
-    role: "AI Specialist",
+    name: "Vishnu Aggarwal",
+    role: "AI Engineer",
     description:
-      "Charlie works on integrating AI models to enhance social media analytics.",
+      "Vishnu works on integrating AI models to enhance social media analytics.",
+    img: "vishnu.jpg",
   },
   {
-    name: "Diana Prince",
+    name: "Arush Singh",
     role: "UI/UX Designer",
     description:
-      "Diana designs the user interface and ensures a great user experience.",
+      "Arush designs the user interface and ensures a great user experience.",
+    img: "arush.jpg",
+  },
+  {
+    name: "Pranav Gaur",
+    role: "Project Manager",
+    description:
+      "Pranav is responsible for overseeing the project and ensuring timely delivery.",
+    img: "pranav.jpg",
   },
 ];
 
 const About = () => {
   return (
     <div className="container mx-auto p-6 text-center">
-      <h1 className="text-3xl font-bold mb-4">About Us</h1>
-      <p className="mb-6">
-        This is a hackathon project centered around social media analytics
-        powered by AI. Our team is dedicated to providing insightful analytics
-        to help users understand and improve their social media presence.
+      <h1 className="text-5xl font-bold mb-8">About Us</h1>
+      <p className="mb-6 max-w-2xl mx-auto text-muted-foreground ">
+        We are a passionate team dedicated to transforming the way social media
+        analytics is perceived. Our collaborative approach ensures innovative
+        solutions, empowering users to gain deeper insights and elevate their
+        social media strategies.
       </p>
-      <h2 className="text-2xl font-semibold mb-4 text-center">Team Members</h2>
+      <h2 className="text-2xl  mb-4 text-center">Team Members</h2>
       <div className="flex flex-wrap gap-6 items-center justify-center">
         {teamMembers.map((member, index) => (
           <div
             key={index}
-            className="p-4 border rounded-lg shadow-md w-full sm:w-64"
+            className="p-4 border border-neutral-700 rounded-xl shadow-md w-full sm:w-64"
           >
             <img
-              src="wallpaper.jpg"
+              src={member.img}
               alt=""
-              className="h-48 object-cover mb-2"
+              className="h-48 object-cover mb-2 w-full rounded-xl"
             />
             <h3 className="text-xl font-bold">{member.name}</h3>
-            <p className="text-sm text-gray-600">{member.role}</p>
-            <p className="mt-2">{member.description}</p>
+            <p className="text-sm text-gray-400">{member.role}</p>
+            <p className="mt-2 text-neutral-300 font-thin">
+              {member.description}
+            </p>
           </div>
         ))}
       </div>

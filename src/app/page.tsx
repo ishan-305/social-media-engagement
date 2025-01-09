@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { GithubIcon, YoutubeIcon } from "lucide-react";
 
 export default function Home() {
   return (
@@ -23,12 +23,12 @@ export default function Home() {
                     sed amet vitae orci ac penatibus consectetur.
                   </div>
                 </div>
-                <div className="flex gap-8 items-start mt-8 text-base font-medium leading-none">
-                  <div className="gap-2.5 self-stretch px-6 py-4 text-white bg-violet-600 rounded-[36px] max-md:px-5">
-                    View Demo
+                <div className="flex gap-8 items-start mt-8 text-lg font-medium leading-none">
+                  <div className="flex items-center gap-2.5 self-stretch px-6 py-4 text-white bg-violet-600 rounded-[36px] max-md:px-5">
+                    <YoutubeIcon className="w-7 h-7" /> View Demo
                   </div>
-                  <div className="gap-2.5 self-stretch px-6 py-4 border border-solid border-slate-800 rounded-[46px] text-neutral-100 max-md:px-5">
-                    View pricing
+                  <div className="flex  items-center gap-2.5 self-stretch px-6 py-4 border border-solid border-slate-800 rounded-[46px] text-neutral-100 max-md:px-5">
+                    <GithubIcon className="w-7 h-7" /> Github
                   </div>
                 </div>
               </div>

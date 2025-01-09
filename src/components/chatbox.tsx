@@ -1,7 +1,13 @@
 "use client";
 
 import useIsMobileView from "@/hooks/useIsMobileView";
-import { MessagesSquare, SendHorizonal, X } from "lucide-react";
+import {
+  Loader2,
+  Loader2Icon,
+  MessagesSquare,
+  SendHorizonal,
+  X,
+} from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import {
@@ -26,8 +32,10 @@ const Chatbox = () => {
   const { isMobile } = useIsMobileView();
   const [inputValue, setInputValue] = useState("");
   const [chat, setChat] = useState(chatArray);
+  const [loading, setLoading] = useState(false);
 
   const handleOnSubmit = async () => {
+    setLoading(true);
     if (chat.length <= chatLimit) {
       setChat((prev) => [...prev, { role: "user", content: inputValue }]);
       setInputValue("");
@@ -49,6 +57,7 @@ const Chatbox = () => {
         { role: "bot", content: "Chat limit exceeded" },
       ]);
     }
+    setLoading(false);
   };
 
   if (isMobile) {
@@ -88,14 +97,23 @@ const Chatbox = () => {
             <form>
               <div className="flex overflow-hidden  gap-2 px-8 py-3  w-full bg-slate-900 border-t border-solid border-neutral-700">
                 <input
-                  className="rounded-lg flex-1 h-12 px-2 leading-loose text-gray-500 bg-slate-900 border border-neutral-700"
+                  className="rounded-xl flex-1 h-12 px-2 leading-loose text-gray-500 bg-slate-900 border border-neutral-700"
                   placeholder="Write your message..."
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                 />
 
-                <Button onClick={handleOnSubmit} type="submit">
-                  <SendHorizonal size={32} />
+                <Button
+                  variant={"ghost"}
+                  onClick={handleOnSubmit}
+                  className="border rounded-xl bg-slate-800"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  ) : (
+                    <SendHorizonal size={32} />
+                  )}
                 </Button>
               </div>
             </form>
@@ -106,8 +124,8 @@ const Chatbox = () => {
   }
 
   return (
-    <div className="flex-[2] my-4 flex overflow-hidden flex-col mx-auto w-full bg-neutral-100 h-[620px] rounded-[20px]">
-      <div className="flex flex-col px-4 py-2 w-full bg-white border-b border-neutral-200">
+    <div className="flex-[2] my-1 flex overflow-hidden flex-col mx-auto w-full  h-[620px] border  rounded-[20px]">
+      <div className="flex flex-col px-4 py-2 w-full  border-b border-neutral-800">
         <div className="flex gap-10  text-gray-500 items-center">
           <img
             loading="lazy"
@@ -127,25 +145,35 @@ const Chatbox = () => {
           <div
             key={index}
             className={cn(
-              "p-2 rounded-xl max-w-[80%] ",
+              "p-2 rounded-xl max-w-[80%]",
               chat.role === "bot"
-                ? "self-start bg-neutral-700"
-                : "self-end bg-violet-700"
+                ? "self-start bg-slate-700"
+                : "self-end bg-[#e23670]"
             )}
           >
             {chat.content}
           </div>
         ))}
       </div>
-      <div className="flex overflow-hidden gap-2 px-8 py-3  w-full bg-white border border-solid border-neutral-200">
+
+      <div className="flex overflow-hidden gap-2 px-8 py-3  w-full  border-t border-solid border-neutral-800">
         <input
-          className="rounded-lg flex-1 h-12 px-2 leading-loose  bg-slate-900 border border-neutral-700"
+          className="rounded-xl flex-1 h-12 px-2 leading-loose  bg-slate-900 border border-neutral-700"
           placeholder="Write your message..."
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <Button onClick={handleOnSubmit}>
-          <SendHorizonal size={32} />
+        <Button
+          variant={"ghost"}
+          onClick={handleOnSubmit}
+          className="border rounded-xl bg-slate-800"
+          disabled={loading}
+        >
+          {loading ? (
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            <SendHorizonal size={32} />
+          )}
         </Button>
       </div>
     </div>
