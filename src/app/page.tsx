@@ -16,7 +16,11 @@ export default function Home() {
               <div className="flex flex-col items-center max-md:max-w-full">
                 <div className="flex flex-col items-center text-center max-md:max-w-full">
                   <div className="text-6xl font-bold tracking-tight leading-none bg-clip-text bg-gradient-to-b from-[rgba(255,255,255,1)] to-[rgba(0,0,0,0.7)] max-md:max-w-full max-md:text-4xl">
-                    AI Powered Social Media Analytics Platform
+                    AI Powered{" "}
+                    <span className="bg-clip-text text-transparent bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]">
+                      Social Media
+                    </span>
+                    {""} Analytics Platform
                   </div>
                   <div className="mt-8 text-lg leading-7 text-slate-400 w-[799px] max-md:max-w-full">
                     Social Lens reveals what drives engagement, from reels to
@@ -73,11 +77,11 @@ export default function Home() {
                 />
                 <div className="flex flex-col mt-8 w-full">
                   <div className="text-2xl font-bold tracking-tighter leading-none text-neutral-100">
-                    User information
+                    Optimize Engagement:
                   </div>
                   <div className="mt-3 text-base leading-6 text-slate-400">
-                    Borem ipsum dolor sit amet consectetur. Turpis tristique
-                    nulla posuere et amet arcu dictum ultricies convallis.
+                    Users can focus on creating high-performing content based on
+                    proven trends and metrics.
                   </div>
                 </div>
               </div>
@@ -89,11 +93,11 @@ export default function Home() {
                 />
                 <div className="flex flex-col mt-8 w-full">
                   <div className="text-2xl font-bold tracking-tighter leading-none text-neutral-100">
-                    Deal tracking
+                    Real-Time Monitoring:
                   </div>
                   <div className="mt-3 text-base leading-6 text-slate-400">
-                    Worem ipsum dolor sit amet consectetur. Turpis tristique
-                    nulla posuere et amet arcu dictum ultricies convallis.
+                    The system monitors engagement patterns, ensuring an
+                    increase in growth and engagement.
                   </div>
                 </div>
               </div>
@@ -105,11 +109,11 @@ export default function Home() {
                 />
                 <div className="flex flex-col mt-8 w-full">
                   <div className="text-2xl font-bold tracking-tighter leading-none text-neutral-100">
-                    Pipeline management
+                    Enhanced Insights:
                   </div>
                   <div className="mt-3 text-base leading-6 text-slate-400">
-                    Dorem ipsum dolor sit amet consectetur. Turpis tristique
-                    nulla posuere et amet arcu dictum ultricies convallis.
+                    With smarter content strategies, Social Lens provides more
+                    meaningful insights to its users.
                   </div>
                 </div>
               </div>
@@ -122,11 +126,11 @@ export default function Home() {
                 />
                 <div className="flex flex-col mt-8 w-full">
                   <div className="text-2xl font-bold tracking-tighter leading-none text-neutral-100">
-                    Reporting dashboard
+                    Business Growth:
                   </div>
                   <div className="mt-3 text-base leading-6 text-slate-400">
-                    Yarem ipsum dolor sit amet consectetur. Turpis tristique
-                    nulla posuere et amet arcu dictum ultricies convallis.
+                    Local businesses can utilize engagement insights to target
+                    the right audience and drive growth.
                   </div>
                 </div>
               </div>
@@ -138,11 +142,11 @@ export default function Home() {
                 />
                 <div className="flex flex-col mt-8 w-full">
                   <div className="text-2xl font-bold tracking-tighter leading-none text-neutral-100">
-                    Meeting scheduling
+                    AI-analytics:
                   </div>
                   <div className="mt-3 text-base leading-6 text-slate-400">
-                    Bem ipsum dolor sit amet consectetur. Turpis tristique nulla
-                    posuere et amet arcu dictum ultricies convallis.
+                    The powerful AI model helps you get engagement patterns and
+                    predictions not visible to the naked eye
                   </div>
                 </div>
               </div>
@@ -154,11 +158,11 @@ export default function Home() {
                 />
                 <div className="flex flex-col mt-8 w-full">
                   <div className="text-2xl font-bold tracking-tighter leading-none text-neutral-100">
-                    Email tracking
+                    Customer-support:
                   </div>
                   <div className="mt-3 text-base leading-6 text-slate-400">
-                    Keem ipsum dolor sit amet consectetur. Turpis tristique
-                    nulla posuere et amet arcu dictum ultricies convallis.
+                    We ensure 24x7 customer support for our users to get them
+                    the growth they deserve.
                   </div>
                 </div>
               </div>
@@ -169,7 +173,7 @@ export default function Home() {
           <div className="flex flex-col justify-center items-center max-w-full w-[1224px]">
             <div className="flex flex-col items-center font-bold text-center max-md:max-w-full">
               <div className="text-6xl tracking-tighter leading-none bg-clip-text bg-[linear-gradient(180deg,#F6F6F7_0%,#7E808F_100%)] max-md:max-w-full max-md:text-4xl">
-                Essential apps that protect your
+                Analytics for Post-Wise Engagement
               </div>
               <div className="flex flex-wrap gap-8 items-start justify-center mt-5 text-5xl tracking-tighter leading-none whitespace-nowrap max-md:max-w-full max-md:text-4xl">
                 <div className="flex gap-3 items-center max-md:text-4xl">
@@ -179,7 +183,7 @@ export default function Home() {
                     className="object-contain shrink-0 self-stretch my-auto aspect-[1.43] w-[43px]"
                   />
                   <div className="self-stretch my-auto bg-clip-text bg-[linear-gradient(180deg,#F6F6F7_0%,#7E808F_100%)] max-md:text-4xl">
-                    Email,
+                    Reels,
                   </div>
                 </div>
                 <div className="flex gap-3 items-center max-md:text-4xl">
@@ -189,7 +193,7 @@ export default function Home() {
                     className="object-contain shrink-0 self-stretch my-auto aspect-[1.03] w-[31px]"
                   />
                   <div className="self-stretch my-auto bg-clip-text bg-[linear-gradient(180deg,#F6F6F7_0%,#7E808F_100%)] max-md:text-4xl">
-                    Events,
+                    Carousel,
                   </div>
                 </div>
                 <div className="flex gap-3 items-center max-md:text-4xl">
@@ -199,7 +203,7 @@ export default function Home() {
                     className="object-contain shrink-0 self-stretch my-auto aspect-[1.27] w-[38px]"
                   />
                   <div className="self-stretch my-auto bg-clip-text bg-[linear-gradient(180deg,#F6F6F7_0%,#7E808F_100%)] max-md:text-4xl">
-                    Files,
+                    Images,
                   </div>
                 </div>
                 <div className="flex gap-3 items-center min-w-[240px] max-md:text-4xl">
@@ -209,7 +213,7 @@ export default function Home() {
                     className="object-contain shrink-0 self-stretch my-auto aspect-[0.77] w-[23px]"
                   />
                   <div className="self-stretch my-auto bg-clip-text bg-[linear-gradient(180deg,#F6F6F7_0%,#7E808F_100%)] max-md:text-4xl">
-                    Documents
+                    Live Stream
                   </div>
                 </div>
               </div>
@@ -818,7 +822,7 @@ export default function Home() {
                 <div className="flex flex-col flex-1 mt-5 w-full max-w-[342px]">
                   <div className="flex flex-col w-full">
                     <div className="text-2xl font-bold tracking-tighter leading-8 text-neutral-100">
-                      Product Mail is taking on Gmail by betting on privacy
+                      Meta is taking on AI by betting on privacy
                     </div>
                     <div className="mt-4 text-sm leading-6 text-slate-400">
                       Ramet consectetur. Est porttitor mattis pharetra sit id
@@ -829,7 +833,7 @@ export default function Home() {
                   <div className="mt-5 w-full border border-solid bg-slate-800 border-slate-800 min-h-[1px]" />
                   <div className="flex gap-10 justify-between items-center mt-5 w-full max-w-[344px]">
                     <div className="self-stretch my-auto text-sm leading-loose text-slate-400">
-                      February 8, 2023
+                      Januray 1, 2025
                     </div>
                     <div className="flex gap-0.5 justify-center items-center self-stretch my-auto text-base font-medium leading-none text-white">
                       <div className="self-stretch my-auto">Read more</div>
@@ -851,7 +855,7 @@ export default function Home() {
                 <div className="flex flex-col flex-1 mt-5 w-full max-w-[342px]">
                   <div className="flex flex-col w-full">
                     <div className="text-2xl font-bold tracking-tighter leading-8 text-neutral-100">
-                      Wants You To Sign Out Of Google Workspace Forever
+                      Wants You To Sign In to SocialLens Forever
                     </div>
                     <div className="mt-4 text-sm leading-6 text-slate-400">
                       Est porttitor mattis pharetra sit id viverra. Vivamus
@@ -861,7 +865,7 @@ export default function Home() {
                   <div className="mt-5 w-full border border-solid bg-slate-800 border-slate-800 min-h-[1px]" />
                   <div className="flex gap-10 justify-between items-center mt-5 w-full max-w-[344px]">
                     <div className="self-stretch my-auto text-sm leading-loose text-slate-400">
-                      February 8, 2023
+                      December 26, 2024
                     </div>
                     <div className="flex gap-0.5 justify-center items-center self-stretch my-auto text-base font-medium leading-none text-white">
                       <div className="self-stretch my-auto">Read more</div>
@@ -883,7 +887,7 @@ export default function Home() {
                 <div className="flex flex-col flex-1 mt-5 w-full max-w-[342px]">
                   <div className="flex flex-col w-full">
                     <div className="text-2xl font-bold tracking-tighter leading-8 text-neutral-100">
-                      The Best Email Encryption Services for 2023
+                      The Best Account Protection Services for 2025
                     </div>
                     <div className="mt-4 text-sm leading-6 text-slate-400">
                       Dorttitor mattis pharetra sit id viverra. Vivamus mauris
@@ -893,7 +897,7 @@ export default function Home() {
                   <div className="mt-5 w-full border border-solid bg-slate-800 border-slate-800 min-h-[1px]" />
                   <div className="flex gap-10 justify-between items-center mt-5 w-full max-w-[344px]">
                     <div className="self-stretch my-auto text-sm leading-loose text-slate-400">
-                      February 8, 2023
+                      January 8, 2025
                     </div>
                     <div className="flex gap-0.5 justify-center items-center self-stretch my-auto text-base font-medium leading-none text-white">
                       <div className="self-stretch my-auto">Read more</div>
