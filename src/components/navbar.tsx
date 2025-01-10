@@ -58,6 +58,7 @@ const Navbar = () => {
         >
           <Link
             href={"https://github.com/vishnud05/social-media-engagement"}
+            target="_blank"
             className="gap-2.5 hidden sm:flex items-center self-stretch px-6 py-3 my-auto text-base font-medium leading-none text-white bg-violet-600 hover:bg-violet-700 rounded-[36px] max-md:px-5"
           >
             <GithubIcon /> Github

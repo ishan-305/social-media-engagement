@@ -31,7 +31,8 @@ export default function Home() {
                 <div className="flex gap-8 items-start mt-8 text-lg font-medium leading-none">
                   <a href="https://www.youtube.com" target="_blank">
                     <Link
-                      href={"https://www.youtube.com"}
+                      href={"https://youtu.be/zwFaU0aUCWg"}
+                      target="_blank"
                       className="flex items-center gap-2.5 self-stretch px-6 py-4 text-white bg-violet-600 hover:bg-violet-700 rounded-[36px] max-md:px-5"
                     >
                       <YoutubeIcon className="w-7 h-7" /> View Demo
@@ -45,6 +46,7 @@ export default function Home() {
                       href={
                         "https://github.com/vishnud05/social-media-engagement"
                       }
+                      target="_blank"
                       className="flex items-center gap-2.5 self-stretch px-6 py-4 border border-solid border-slate-800 rounded-[46px] text-neutral-100 hover:bg-slate-950/60 max-md:px-5"
                     >
                       <GithubIcon className="w-7 h-7" /> Github
