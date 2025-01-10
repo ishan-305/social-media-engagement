@@ -30,7 +30,11 @@ const Navbar = () => {
               href="/"
               className="text-2xl text-center font-bold tracking-wide bg-clip-text bg-gradient-to-b from-[rgba(255,255,255,1)] to-[rgba(0,0,0,0.7)] "
             >
-              <img src="/logo.png" alt="" className="h-12 object-cover" />
+              <img
+                src="/logo.png"
+                alt="SocialLens"
+                className="h-12 object-cover"
+              />
             </Link>
           </div>
         </div>

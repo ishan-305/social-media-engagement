@@ -5,29 +5,25 @@ const teamMembers = [
   {
     name: "Ishan Singh",
     role: "Lead Developer",
-    description:
-      "Ishan leads the development team and is responsible for the core architecture.",
+    description: "NSUT '26",
     img: "ishan.jpeg",
   },
   {
     name: "Vishnu Aggarwal",
     role: "AI Engineer",
-    description:
-      "Vishnu works on integrating AI models to enhance social media analytics.",
+    description: "NSUT '26",
     img: "vishnu.jpg",
   },
   {
     name: "Arush Singh",
     role: "UI/UX Designer",
-    description:
-      "Arush designs the user interface and ensures a great user experience.",
+    description: "NSUT '26",
     img: "arush.jpg",
   },
   {
     name: "Pranav Gaur",
-    role: "Project Manager",
-    description:
-      "Pranav is responsible for overseeing the project and ensuring timely delivery.",
+    role: "Backend Developer",
+    description: "NSUT '26",
     img: "pranav.jpg",
   },
 ];
